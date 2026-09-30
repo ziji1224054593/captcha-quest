@@ -5,18 +5,18 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>人类通关计划 · 验证码小游戏</title>
   <link rel="stylesheet" href="style.css">
-</head>
+<link rel="stylesheet" href="bureau.css"><link rel="stylesheet" href="defiance.css"></head>
 <body>
   <main>
     <header><a class="brand" href="./">◈ 人类通关计划</a><span>CAPTCHA QUEST / 01</span></header>
-    <section class="intro"><span class="eyebrow">一块拼图，三重审查</span><h1>证明你是人类。<br><em>这次，玩真的。</em></h1><p>从一次简单的拖动开始，看看你能走到哪一步。</p></section>
-    <ol class="route" aria-label="闯关进度"><li id="step1" aria-current="step"><b>01</b><span>初来乍到<small>拖动 · 对齐 · 松手</small><small class="stage-time" id="stageTime1">未开始</small></span></li><li id="step2"><b>02</b><span>极限验证<small>变形 · 旋转 · 连续匹配</small><small class="stage-time" id="stageTime2">未开始</small></span></li><li id="step3"><b>03</b><span>反人类审查局<small>反向 · 自转 · 五轮连击</small><small class="stage-time" id="stageTime3">未开始</small></span></li></ol>
+    <section class="intro"><span class="eyebrow">一块拼图，五重审查</span><h1>证明你是人类。<br><em>这次，玩真的。</em></h1><p>从一次简单的拖动开始，看看你能走到哪一步。</p></section>
+    <ol class="route" aria-label="闯关进度"><li id="step1" aria-current="step"><b>01</b><span>初来乍到<small>拖动 · 对齐 · 松手</small><small class="stage-time" id="stageTime1">未开始</small></span></li><li id="step2"><b>02</b><span>极限验证<small>变形 · 旋转 · 连续匹配</small><small class="stage-time" id="stageTime2">未开始</small></span></li><li id="step3"><b>03</b><span>反人类审查局<small>反向 · 自转 · 五轮连击</small><small class="stage-time" id="stageTime3">未开始</small></span></li><li id="step4"><b>04</b><span>规则叛变<small>记忆 · 反转 · 原件归档</small><small class="stage-time" id="stageTime4">未开始</small></span></li><li id="step5"><b>05</b><span>行为拒绝实验室<small>驱赶 · 阻力 · 轴向叛变</small><small class="stage-time" id="stageTime5">未开始</small></span></li></ol>
     <section class="arena" aria-labelledby="levelTitle">
-      <div class="arena-heading"><div><span id="levelLabel" class="eyebrow">LEVEL 01 / 03</span><h2 id="levelTitle">初来乍到</h2></div><span class="attempts">失误 <b id="failures">0</b> 次</span></div>
+      <div class="arena-heading"><div><span id="levelLabel" class="eyebrow">LEVEL 01 / 05</span><h2 id="levelTitle">初来乍到</h2></div><span class="attempts">失误 <b id="failures">0</b> 次</span></div>
       <div class="timing" aria-label="闯关计时"><span>本关 <b id="levelTime">00:00.0</b></span><span>累计 <b id="totalTime">00:00.0</b></span></div><p class="timing-note">进入关卡即计时，重试继续累计；关间过渡不计时。</p><p id="instructions">按住拼块，拖入唯一的缺口，对齐后松手。</p>
       <div id="board"><div id="captcha"></div><div id="transition" hidden><span>✓</span><h3 id="transitionTitle">第一关通过</h3><p id="transitionText">正在进入第二关…</p></div></div>
       <p id="status" role="status" aria-live="polite">准备好了就开始拖动，无需点击开始。</p>
-      <div id="victory" hidden><span class="eyebrow">MISSION COMPLETE</span><h2>人类，通关！</h2><p>你完成了三重验证码挑战。</p><p class="final-time">总用时 <strong id="finalTime"></strong></p><div id="timeResults"></div><button id="playAgain" type="button">再挑战一次 ↗</button></div>
+      <div id="victory" hidden><span class="eyebrow">MISSION COMPLETE</span><h2>人类，通关！</h2><p>你完成了五重验证码挑战。</p><p class="final-time">总用时 <strong id="finalTime"></strong></p><div id="timeResults"></div><button id="playAgain" type="button">再挑战一次 ↗</button></div>
       <div class="actions"><button id="retry" type="button">重试本关 ↻</button><button id="restart" type="button">从第一关开始</button></div>
     </section>
     <footer><span>无需注册 · 不设时限 · 失败可重试</span><span>一个关于耐心与手感的小游戏</span></footer>

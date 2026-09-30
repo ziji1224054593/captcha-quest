@@ -13,7 +13,9 @@ export const levels = [
     title: '反人类审查局',
     instructions: '终极规则：反向拖动（双倍位移），外环也反向！拼块远离目标时每 1.6 秒自行转动 45°，进入目标附近 90 像素范围后停止自转。更快的目标需连续贴合 1.2 秒，完成五轮变形与外环衔接才能松手。失败只重试本关。',
     options: { width: 560, changes: 4, nightmare: true, tolerance: 10, colorMotion: true, colorSpeed: 4, textureInterval: 400, followDuration: 1200, noise: { dots: 600, opacity: 0.24 }, cracks: { count: 14, opacity: 0.28 }, effects: { textureMatch: true, rotation: true, spotlight: true, movingTargets: true, temporalClues: true, obstacles: true, ripples: true, outerRing: true } }
-  }
+  },
+  { title: '规则叛变', instructions: '记忆目标；绿章执行、红章反向；窗口停留半秒；无效印章不生效；全程按住，审批结束回起点停留一秒再松手。', options: { bureau: true, changes: 3 } },
+ {title:'行为拒绝实验室',instructions:'阅读实验区规则后开始；过程不提供操作提示。',options:{defiance:true,changes:2}}
 ];
 
 export function createProgress() {

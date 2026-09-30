@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { createProgress, levels } from './levels.js';
 
-test('first victory unlocks second level once; third victory completes game', () => {
+test('first victory unlocks second level once; fifth victory completes game', () => {
   const game = createProgress();
   game.fail();
   assert.equal(game.win(), true);
@@ -17,7 +17,11 @@ test('first victory unlocks second level once; third victory completes game', ()
   game.advance();
   game.win();
   game.fail();
-  assert.deepEqual(game.state, { level: 2, failures: 2, phase: 'complete' });
+  assert.equal(game.state.phase, 'transition');
+  game.advance(); game.win();
+  assert.equal(game.state.phase, 'transition');
+  game.advance(); game.win();
+  assert.deepEqual(game.state, { level: 4, failures: 2, phase: 'complete' });
 });
 test('restart during transition cancels advancement and resets score', () => {
   const game = createProgress();

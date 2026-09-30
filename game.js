@@ -1,3 +1,5 @@
+import { createDefiance } from './defiance.js';
+import { createBureau } from './bureau.js';
 import { createCaptcha } from './vendor/captcha.js';
 import { levels, createProgress } from './levels.js';
 
@@ -34,7 +36,7 @@ function mount() {
   $('victory').hidden = true;
   $('board').hidden = false;
   $('retry').disabled = false;
-  $('status').textContent = level === 0 ? '准备好了就开始拖动，无需点击开始。' : `第 ${level + 1} 关已解锁。保持按住，坚持到最后一轮。`;
+  $('status').textContent = current.options.bureau ? '' : level === 0 ? '准备好了就开始拖动，无需点击开始。' : `第 ${level + 1} 关已解锁。保持按住，坚持到最后一轮。`;
   $('failures').textContent = progress.state.failures;
   levels.forEach((_, i) => {
     const step = $(`step${i + 1}`);
@@ -42,9 +44,9 @@ function mount() {
     if (i === level) step.setAttribute('aria-current', 'step');
     else step.removeAttribute('aria-current');
   });
-  captcha = createCaptcha('#captcha', {
+  captcha = (current.options.defiance ? createDefiance : current.options.bureau ? createBureau : createCaptcha)('#captcha', {
     ...current.options,
-    onChange({ changesCompleted }) { $('status').textContent = `已完成 ${changesCompleted} / ${current.options.changes + 1} 轮，继续按住，不要松手。`; },
+    onChange({ changesCompleted }) { if (current.options.bureau || current.options.defiance) return; $('status').textContent = `已完成 ${changesCompleted} / ${current.options.changes + 1} 轮，继续按住，不要松手。`; },
     onFail() {
       progress.fail();
       $('failures').textContent = progress.state.failures;
